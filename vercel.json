@@ -1,15 +1,22 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
+      "source": "/introducers",
+      "destination": "/introducers.html"
+    },
+    {
+      "source": "/glass",
+      "destination": "https://glass-human-diagnostic.vercel.app"
+    },
+    {
+      "source": "/glass/(.*)",
+      "destination": "https://glass-human-diagnostic.vercel.app/$1"
     }
   ],
-  "routes": [
+  "crons": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "path": "/api/process-payouts",
+      "schedule": "0 2 5 * *"
     }
   ]
 }
