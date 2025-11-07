@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Root Health – Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/console.css" />
+</head>
+<body class="app-shell">
+  <div class="bg-layer"></div>
+
+  <header class="top-bar glass">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Root Health Console</span>
+    </div>
+    <div class="top-actions">
+      <button class="gh-btn">Mentions</button>
+      <button class="gh-btn">Content</button>
+      <button class="gh-btn primary">Coach David</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel glass" id="coach-panel">
+      <h2>Coach David</h2>
+      <p class="subtle">Conversational coach. 1 free tester per user.</p>
+      <div class="coach-body">
+        <div class="message from-coach">
+          Hey David, ready when you are. What’s coming up today?
+        </div>
+        <div class="message from-user">
+          I’m feeling a bit scattered, can we reset?
+        </div>
+        <textarea class="input" placeholder="Type a message…"></textarea>
+        <button class="primary full">Send to Coach</button>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <h2>Activity Feed</h2>
+      <div class="feed">
+        <article class="feed-card">
+          <h3>Reddit – wellbeinguk</h3>
+          <p>“Any app for tiny routines? Everything feels too big atm.”</p>
+          <button class="ghost">Approve draft & send</button>
+        </article>
+        <article class="feed-card">
+          <h3>LinkedIn – Root story post</h3>
+          <p>Engagement +14%, best time window 11:15.</p>
+          <button class="ghost">View in Airtable</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <h2>Introducer / Campaign Capture</h2>
+      <p class="subtle">Store interest from micro-campaigns or free glass users.</p>
+      <form
+        action="https://formspree.io/f/YOUR-FORM-ID"
+        method="POST"
+        class="stack"
+      >
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@domain.com" required />
+        </label>
+        <label>
+          What are you interested in?
+          <select name="interest">
+            <option value="coach-david">Coach David</option>
+            <option value="introducer">Introducer programme</option>
+            <option value="root-pulse">Content automation</option>
+            <option value="glass-product">Free glass product</option>
+          </select>
+        </label>
+        <input type="hidden" name="source" value="root-health-console" />
+        <button type="submit" class="primary full">Save to campaigns</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
